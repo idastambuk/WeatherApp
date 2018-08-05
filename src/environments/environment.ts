@@ -6,3 +6,6 @@
 export const environment = {
   production: false
 };
+
+export const BASE_URL = 'http://api.openweathermap.org/data/2.5/';
+export const API_KEY = '3da76c2fb21ff08b0ba456a25069ca8f';

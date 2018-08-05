@@ -1,0 +1,35 @@
+<div class="container">
+    <h2 class="title">
+        {{params_date}}
+    </h2>
+    <div class="row flex-wrap flex-column align-items-center">
+        <div   *ngFor="let time of hourlyDataSingle" class="col-12 col-sm-8 col-md-6 col-lg-5">
+            <div class="city-card">
+                <div class="card-visual">
+                    <div class="text">
+                        <h4>{{utils.formatTime(time.dt_txt)}}</h4>
+                        <p class="main_desc">{{time.weather[0].main}}</p>
+                        <p class="temp">{{utils.toInt(time.main.temp)}} &#8451;</p>
+                    </div>
+                    <div class="img">
+                        <img class="graphic" src="{{'http://openweathermap.org/img/w/' + time.weather[0].icon + '.png'}}" alt="">
+                        </div>
+                </div>
+                <div class="additional-info">
+                    <div>
+                        <i class="wi wi-barometer"></i>
+                        {{utils.toInt(time.main.pressure)}} hP
+                    </div>
+                    <div>
+                        <i class="wi wi-humidity"></i>
+                        {{time.main.humidity}} %
+                    </div>
+                    <div>
+                        <i class="wi wi-strong-wind"></i>
+                        {{utils.toInt(time.wind.speed)}} kmpH
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>                  

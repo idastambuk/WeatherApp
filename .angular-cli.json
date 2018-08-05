@@ -19,6 +19,8 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
+        "../node_modules/bootstrap/scss/bootstrap.scss",
+        "../node_modules/weather-icons/css/weather-icons.min.css",
         "styles.scss"
       ],
       "scripts": [],

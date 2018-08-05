@@ -1,1 +1,76 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400');
+
+body {
+    font-family: 'Quicksand', sans-serif;
+}
+*{
+    color: #1B2942;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.city-card {
+    width: 100%;
+    font-weight: 300;
+    margin: 3rem;
+    box-sizing: border-box;
+    box-shadow: 29px 41px 45px rgba(77, 71, 122, 0.08);
+    .card-visual {
+        display: flex;
+        justify-content: space-around;
+        align-content: center;
+        padding: 2rem;
+        background-color:#607D8B;
+        min-height: 240px;
+        .text {
+            word-wrap: break-word;
+            font-size: 1.5rem;
+            line-height: 2rem;
+            width: 50%;
+            .temp {
+                span {
+                    opacity: 0.7;
+                    font-size: 1rem;
+                    position: relative;;
+                    bottom: 0.5rem;
+                    left: -0.3rem;
+                }
+            }
+            .main-desc {
+                color: #404E67;
+                text-transform: lowercase;
+                font-size: 1rem;
+            }
+        }
+        .img {
+            width: 50%;
+            img {
+                @keyframes fade-animation {
+                    0% {opacity: 1}
+                    50% {opacity: 0.25}
+                    100% {opacity: 1}
+                }
+                animation-name: fade-animation;
+                animation-duration: 4s;
+                animation-iteration-count: infinite;
+                width: 80%;
+            }
+        }
+    }
+    .additional-info {
+        padding: 2rem;
+        justify-content: space-evenly;
+        align-content: center;
+        display: flex;
+        background-color: white;
+        div {
+            padding: 0.5rem;
+        }
+        div:not(:nth-child(1)) {
+            border-left: 2px solid #1B2942;
+        }
+    }
+}
+

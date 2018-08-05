@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row flex-wrap">
+        <div  *ngFor="let city of cities" class="col-12 col-md-6 col-lg-6 col-xl-4">
+            <div class="city-card" (click)="onShowCity(city.name)">
+                <div class="card-visual">
+                    <div class="text">
+                        <p class="main_desc">{{city.weather[0].main}}</p>
+                        <p class="temp">{{utils.toInt(city.main.temp)}} &#8451;</p>
+                        <h4 class="city_name">
+                            {{city.name}}, {{city.sys.country}}
+                        </h4>
+                    </div>
+                    <div class="img">
+                        <img class="graphic" src="{{'http://openweathermap.org/img/w/' + city.weather[0].icon + '.png'}}" alt="">
+                    </div>
+                </div>
+                <div class="additional-info">
+                    <div>
+                        <i class="wi wi-barometer"></i>
+                        {{utils.toInt(city.main.pressure)}} hP
+                    </div>
+                    <div>
+                        <i class="wi wi-humidity"></i>
+                        {{city.main.humidity}} %
+                    </div>
+                    <div>
+                        <i class="wi wi-strong-wind"></i>
+                        {{utils.toInt(city.wind.speed)}} kmpH
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

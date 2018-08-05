@@ -1,0 +1,33 @@
+<div class="container">
+        <div class="row flex-wrap">
+            <div   *ngFor="let day of forecastMedian" class="col-12 col-md-6 col-lg-6 col-xl-4">
+                <div class="city-card" (click)="onShowHourly(day.day_info.dt_txt)">
+                    <div class="card-visual">
+                        <div class="text">
+                            <h4>{{utils.formatDate(day.day_info.dt_txt)}}</h4>
+                            <p>{{utils.getWeekday(day.day_info.dt_txt)}}</p>
+                            <p class="main_desc">{{day.day_info.weather[0].main}}</p>
+                            <p class="temp"><span>{{utils.toInt(day.min_temp)}}&#8451;</span>{{utils.toInt(day.max_temp)}} &#8451;</p>
+                        </div>
+                        <div class="img">
+                            <img class="graphic" src="{{'http://openweathermap.org/img/w/' + day.day_info.weather[0].icon + '.png'}}" alt="">
+                        </div>
+                    </div>
+                    <div class="additional-info">
+                        <div>
+                            <i class="wi wi-barometer"></i>
+                            {{utils.toInt(day.day_info.main.pressure)}} hP
+                        </div>
+                        <div>
+                            <i class="wi wi-humidity"></i>
+                            {{day.day_info.main.humidity}} %
+                        </div>
+                        <div>
+                            <i class="wi wi-strong-wind"></i>
+                            {{utils.toInt(day.day_info.wind.speed)}} kmpH
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
